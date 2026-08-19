@@ -1,0 +1,14 @@
+{
+	"name": "CekatAiToolTrigger",
+	"version": 1,
+	"description": "AI Tool Trigger node for Cekat",
+	"defaults": {
+		"name": "Cekat AI Tool Trigger"
+	},
+	"key": "cekatAiToolTrigger",
+	"category": "trigger",
+	"webhook": true,
+	"inputs": [],
+	"outputs": ["main"],
+	"properties": []
+}

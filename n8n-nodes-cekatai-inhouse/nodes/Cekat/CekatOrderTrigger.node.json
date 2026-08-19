@@ -1,0 +1,14 @@
+{
+	"name": "CekatOrderTrigger",
+	"version": 1,
+	"description": "Trigger node for receiving Cekat Order webhooks",
+	"defaults": {
+		"name": "Cekat Order Trigger"
+	},
+	"key": "cekatOrderTrigger",
+	"category": "trigger",
+	"webhook": true,
+	"inputs": [],
+	"outputs": ["main"],
+	"properties": []
+}
