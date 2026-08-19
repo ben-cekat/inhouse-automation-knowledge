@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cekat Node Picker</title>
+  <style>
+    :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #1a1a1a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: #f7f7f5; display: grid; place-items: center; padding: 24px; }
+    .picker { width: min(100%, 520px); background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 16px 20px; box-shadow: 0 8px 30px rgba(0,0,0,.06); }
+    .search { display: flex; align-items: center; gap: 8px; border: 1px solid #e0e0e0; border-radius: 8px; padding: 8px 12px; margin-bottom: 12px; background: #fff; }
+    .search span { font-size: 16px; color: #888; }
+    .search input { width: 100%; border: 0; outline: 0; font-size: 13px; color: #1a1a1a; background: transparent; }
+    .search input::placeholder { color: #888; }
+    .tabs { display: flex; gap: 6px; overflow-x: auto; margin-bottom: 14px; padding-bottom: 2px; }
+    .tab { border: 0; cursor: pointer; font-size: 13px; padding: 6px 12px; border-radius: 8px; color: #5f5e5a; background: transparent; white-space: nowrap; }
+    .tab.active { background: #e6f1fb; color: #0c447c; font-weight: 600; }
+    .section-label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 6px; }
+    .node-list { display: flex; flex-direction: column; gap: 2px; }
+    .node { display: flex; gap: 10px; padding: 9px 4px; border-radius: 8px; cursor: pointer; }
+    .node:hover { background: #fafafa; }
+    .icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0; }
+    .icon.chat { background: #e6f1fb; color: #0c447c; }
+    .icon.crm { background: #e9f6ee; color: #176b3a; }
+    .icon.contacts { background: #f0eafa; color: #6941a5; }
+    .icon.marketing { background: #fff0df; color: #a64b00; }
+    .icon.orders { background: #fff7cc; color: #7a5d00; }
+    .node p { margin: 0; }
+    .node-name { font-size: 14px; margin-bottom: 2px !important; }
+    .node-description { font-size: 12px; color: #666; line-height: 1.4; }
+    code { font-size: 11px; }
+    .divider { border-top: 1px solid #eee; margin: 8px 0; }
+    .footer { margin-top: 10px; padding: 10px 4px 2px; border-top: 1px solid #e0e0e0; }
+    .footer p { font-size: 12px; color: #999; margin: 0; line-height: 1.4; }
+    .empty { color: #888; font-size: 13px; padding: 16px 4px; }
+  </style>
+</head>
+<body>
+  <main class="picker">
+    <label class="search">
+      <span aria-hidden="true">⌕</span>
+      <input id="search" type="search" placeholder="Search Cekat nodes" autocomplete="off">
+    </label>
+
+    <nav class="tabs" aria-label="Node domains">
+      <button class="tab active" data-domain="Chat">Chat</button>
+      <button class="tab" data-domain="CRM">CRM</button>
+      <button class="tab" data-domain="Contacts">Contacts</button>
+      <button class="tab" data-domain="Marketing">Marketing</button>
+      <button class="tab" data-domain="Orders">Orders</button>
+    </nav>
+
+    <section id="results" aria-live="polite"></section>
+
+    <footer class="footer">
+      <p>Nodes are grouped by domain. API field names appear in each node description for engineering clarity.</p>
+    </footer>
+  </main>
+
+  <script>
+    const nodes = [
+      { domain: 'Chat', type: 'Triggers', name: 'New message received', key: 'message.received', description: 'Starts when a customer sends a message.' },
+      { domain: 'Chat', type: 'Triggers', name: 'New message sent', key: 'message.sent', description: 'Starts when an agent or AI sends a message.' },
+      { domain: 'Chat', type: 'Triggers', name: 'Conversation created', key: 'conversation.created', description: 'Starts when a new conversation is created.' },
+      { domain: 'Chat', type: 'Triggers', name: 'Conversation label changed', key: 'conversation.labels_updated', description: 'Starts when a label is added or removed.' },
+      { domain: 'Chat', type: 'Actions', name: 'Send message', key: 'conversation_id', description: 'Send a text or file using conversation_id.' },
+      { domain: 'Chat', type: 'Actions', name: 'Add conversation label', key: 'conversation_id, label_id', description: 'Add a label using conversation_id and label_id.' },
+      { domain: 'Chat', type: 'Actions', name: 'Assign conversation', key: 'conversation_id, agent_id', description: 'Assign using conversation_id and agent_id.' },
+      { domain: 'Chat', type: 'Actions', name: 'Change conversation status', key: 'conversation_id, stage_status', description: 'Update a conversation using conversation_id and stage_status.' },
+      { domain: 'CRM', type: 'Triggers', name: 'New CRM record', key: 'crm_item.created', description: 'Starts when a CRM record is created.' },
+      { domain: 'CRM', type: 'Triggers', name: 'CRM record updated', key: 'crm_item.updated', description: 'Starts when a CRM record changes.' },
+      { domain: 'CRM', type: 'Actions', name: 'Create CRM record', key: 'board_id, item_name', description: 'Create a record using board_id and item_name.' },
+      { domain: 'CRM', type: 'Actions', name: 'Update CRM record', key: 'board_id, item_id', description: 'Update a record using board_id and item_id.' },
+      { domain: 'CRM', type: 'Actions', name: 'Find CRM record', key: 'board_id', description: 'Search records using board fields and conditions.' },
+      { domain: 'Contacts', type: 'Actions', name: 'Find contact by phone', key: 'phone_number', description: 'Find a contact using phone_number.' },
+      { domain: 'Contacts', type: 'Actions', name: 'Update contact information', key: 'contact_id, additional_data', description: 'Update contact properties using contact_id.' },
+      { domain: 'Marketing', type: 'Actions', name: 'Upload recipient list', key: 'name, file', description: 'Upload a CSV or XLSX recipient list.' },
+      { domain: 'Marketing', type: 'Actions', name: 'Create broadcast campaign', key: 'campaign_name, inbox_id, recipient_list_id, template_id', description: 'Create a campaign using a recipient list and template.' },
+      { domain: 'Marketing', type: 'Actions', name: 'Send Meta event', key: 'inbox_meta_dataset_id, events', description: 'Send conversion events to the configured Meta dataset.' },
+      { domain: 'Marketing', type: 'Lookups', name: 'List campaigns', key: 'page, limit', description: 'Retrieve campaigns and delivery metrics.' },
+      { domain: 'Orders', type: 'Triggers', name: 'Order status changed', key: 'order.order_status_updated', description: 'Coming soon after order API validation.' },
+      { domain: 'Orders', type: 'Actions', name: 'Create order', key: 'orders_products, payment_method', description: 'Coming soon; financial action requires additional validation.' },
+      { domain: 'Orders', type: 'Actions', name: 'Update order', key: 'orderId', description: 'Coming soon; financial action requires additional validation.' }
+    ];
+
+    const results = document.getElementById('results');
+    const search = document.getElementById('search');
+    const tabs = [...document.querySelectorAll('.tab')];
+    let domain = 'Chat';
+
+    function render() {
+      const query = search.value.trim().toLowerCase();
+      const filtered = nodes.filter(node => {
+        const matchesDomain = node.domain === domain;
+        const haystack = `${node.name} ${node.key} ${node.description} ${node.type}`.toLowerCase();
+        return matchesDomain && haystack.includes(query);
+      });
+
+      if (!filtered.length) {
+        results.innerHTML = '<div class="empty">No nodes found.</div>';
+        return;
+      }
+
+      const groups = filtered.reduce((acc, node) => {
+        (acc[node.type] ||= []).push(node);
+        return acc;
+      }, {});
+
+      results.innerHTML = Object.entries(groups).map(([type, group]) => `
+        <p class="section-label">${type}</p>
+        <div class="node-list">
+          ${group.map(node => `
+            <div class="node">
+              <div class="icon ${node.domain.toLowerCase()}">C</div>
+              <div>
+                <p class="node-name">${node.name}</p>
+                <p class="node-description"><code>${node.key}</code> — ${node.description}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        ${type === 'Triggers' ? '<div class="divider"></div>' : ''}
+      `).join('');
+    }
+
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      tabs.forEach(item => item.classList.remove('active'));
+      tab.classList.add('active');
+      domain = tab.dataset.domain;
+      search.value = '';
+      render();
+    }));
+
+    search.addEventListener('input', render);
+    render();
+  </script>
+</body>
+</html>

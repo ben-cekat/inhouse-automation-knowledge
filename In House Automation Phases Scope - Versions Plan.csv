@@ -1,0 +1,29 @@
+V1,
+Builder / product surface (Automation Building Blocks),"Multiple automations, per-business scoped"
+,Drag-and-drop canvas builder
+,Full execution logs with node-level attribution
+,"Searchable execution history (by workflow, status, date range, run ID)"
+,Live view of running automations
+,"Error containment — a stuck/looping automation can't affect other automations, other businesses, or the platform"
+Automation capabilities,Trigger → Filter → (optional AI step) → Action structure
+,"Triggers: message received, message sent, label added, label removed, CRM record created, CRM record changed"
+,"Filters: contact-property comparison, existence check"
+,Flow control: Condition/Router (mandatory fallback)
+,"Actions: add/remove label, call webhook, format/manipulate data, Find CRM record, Create CRM record, Update CRM Table, Call CAPI, update session field, fire custom CDP event, AI analysis step"
+V2,
+Builder / product surface (Automation Building Blocks),UI Improvements (If any)
+Automation capabilities,"Filter/trigger by segment (CDP-based) — leads the CEO's notes, needs his explicit call"
+,Stop / override an outgoing reply (Need Confirmation)
+,Schedule (cron) trigger 
+,"Conversation-inactivity trigger (""chat delay"")"
+,"Wait/delay step, with re-check on resume"
+V3 (Proposed),
+Builder / product surface (Automation Building Blocks),UI Improvements (If any)
+Automation capabilities,Campaign/broadcast delivered or opened trigger
+,Frequency cap or suppression-list entry reached trigger
+,"Lifecycle/RFM stage changed trigger (e.g. VIP, churn-risk)"
+,Ad platform conversion echoed back into Cekat trigger
+,Add/remove contact from a segment or list action
+,Enroll contact into a campaign or broadcast sequence action
+,Apply or lift a suppression/frequency cap action
+,Update marketing consent/opt-in status action

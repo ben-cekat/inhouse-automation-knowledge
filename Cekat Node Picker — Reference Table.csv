@@ -1,0 +1,52 @@
+Tab,Category,Type,Node name,Description,Required inputs,Optional inputs,Confidence
+Chat,Lookup,Action,Get all messages from a conversation,Pulls every message from a chosen conversation,conversation_id,None documented,Documented
+Chat,Lookup,Action,Get all inboxes,Lists every inbox in your workspace,None,None documented,Documented
+Chat,Lookup,Action,Get all labels,Lists every label you can apply to a conversation,None,None documented,Documented
+Chat,Lookup,Action,Get all pipeline statuses,Lists every stage in your pipeline,None,None documented,Documented
+Chat,Lookup,Action,Get all agents,Lists everyone on your team who can be assigned,None,None documented,Documented
+Chat,Lookup,Action,Get all templates,Lists your approved WhatsApp message templates,None,"Date/datetime filters, page, limit",Documented (P1)
+Chat,Lookup,Action,Get a contact by phone number,Finds a contact using their phone number,phone_number,None documented,Documented
+Chat,Contact,Action,Update additional data of a contact,Updates custom info stored on a contact,"contact_id, additional_data",None documented,Documented
+Chat,Conversation,Action,Resolve a conversation,Marks a conversation as resolved,conversation_id,None documented,Documented
+Chat,Conversation,Action,Assign a label to a conversation,Adds a label to a conversation,"conversation_id, label_id",None documented,Documented
+Chat,Conversation,Action,Remove a label from a conversation,Removes a label from a conversation,"conversation_id, label_id",None documented,Documented
+Chat,Conversation,Action,Assign an agent to a conversation,Routes the conversation to a specific team member,"conversation_id, agent_id",None documented,Documented
+Chat,Conversation,Action,Add a collaborator to a conversation,Brings in a teammate to help on a conversation,"conversation_id, agent_id",None documented,Documented (P1)
+Chat,Conversation,Action,Change the stage status of a conversation,Moves a conversation to a different stage,"conversation_id, stage_status",None documented,Documented
+Chat,Conversation,Action,Set the status of a pipeline,Updates where a conversation sits in your pipeline,"conversation_id, pipeline_status_id",None documented,Documented
+Chat,Conversation,Action,Block the AI from a conversation,Stops the AI from replying in this conversation,conversation_id,None documented,Documented (P1)
+Chat,Conversation,Action,Unblock the AI from a conversation,Lets the AI start replying again,conversation_id,None documented,Documented (P1)
+Chat,Conversation,Action,Assign the ai agent to conversation,Hands the conversation off to an AI agent,"conversationId, assigned_ai_agent",Keep-assigned flag,Documented (P1)
+Chat,Message,Action,Send a message,Sends a WhatsApp message,"conversation_id, receiver, message",file_url,Documented
+Chat,Message,Action,Send a template message,Sends an approved WhatsApp template message,"inbox_id, template_id, phone_number, phone_name, variables",None documented,Documented (P1)
+Chat,Trigger,Trigger,On message received,Starts when a new message comes in,None,inbox_id filter,Documented
+Chat,Trigger,Trigger,On message sent,Starts when a message goes out,None,inbox_id filter,Documented
+Chat,Trigger,Trigger,On conversation created,Starts when a new conversation begins,None,inbox_id filter,Documented
+Chat,Trigger,Trigger,On handled by updated,Starts when the assigned team member changes,None,inbox_id filter,Documented
+Chat,Trigger,Trigger,On stage status updated,Starts when a conversation moves to a new stage,None,inbox_id filter,Documented
+Chat,Trigger,Trigger,On pipeline status updated,Starts when a conversation's pipeline status changes,None,inbox_id filter,Documented
+Chat,Trigger,Trigger,On labels updated,Starts when labels on a conversation change,None,inbox_id filter,Documented
+Chat,Trigger,Trigger,On contact updated,Starts when a contact's info changes,None,None documented,Documented
+Orders,Lookup,Action,Get all orders,Lists all orders,None,None documented,Documented (shipped
+Orders,Lookup,Action,Get order,Looks up a single order,orderId,None documented,Documented (shipped
+Orders,Action,Action,Update order,Updates an existing order,"orderId, order/payment fields (unspecified)",None documented,Documented (shipped
+Orders,Action,Action,Create order,Creates a new order,"orders_products, payment/customer fields (unspecified)",None documented,Documented (shipped
+Orders,Trigger,Trigger,On order created,Starts when a new order is placed,None,None documented,Documented (shipped
+Orders,Trigger,Trigger,On order updated,Starts when an order changes,None,None documented,Documented (shipped
+Orders,Trigger,Trigger,On order status updated,Starts when an order's status changes,None,None documented,Documented (shipped
+Orders,Trigger,Trigger,On payment status updated,Starts when a payment's status changes,None,None documented,Documented (shipped
+CRM,Lookup,Action,Get all boards,Lists your CRM boards,None,None documented,Observed behavior (no source doc)
+CRM,Lookup,Action,Get board,Looks up a single CRM board including its columns,board_id,None documented,INFERRED — node does not appear in either doc; endpoint and input guessed by pattern-matching
+CRM,Lookup,Action,Get all items,Lists records on a CRM board,board_id,None documented,Observed behavior (no source doc)
+CRM,Lookup,Action,Get item,Looks up a single CRM record,"board_id, item_id",None documented,INFERRED — node does not appear in either doc; endpoint and input guessed by pattern-matching
+CRM,Lookup,Action,Search items,Finds CRM records matching your criteria,"board_id, search conditions (unspecified)",None documented,Observed behavior (no source doc)
+CRM,Action,Action,Create item,Creates a new CRM record,"board_id, item_name, dynamic CRM fields",None documented,Observed behavior (no source doc)
+CRM,Action,Action,Update item,Updates an existing CRM record,"board_id, item_id, dynamic CRM fields",None documented,Observed behavior (no source doc)
+CRM,Action,Action,Delete items,Deletes one or more CRM records,"board_id, item_ids",None documented,Observed behavior (no source doc; P1)
+CRM,Trigger,Trigger,On crm item created,Starts when a new CRM record is created,None,board_id filter,Documented
+CRM,Trigger,Trigger,On crm item updated,Starts when a CRM record is updated,None,board_id filter,Documented
+CRM,Trigger,Trigger,On crm item deleted,Starts when a CRM record is deleted,None,board_id filter,INFERRED — filter pattern assumed from sibling triggers
+CRM,Trigger,Trigger,On crm value upserted,Starts when a field on a CRM record is added or changed,None,board_id filter,INFERRED — filter pattern assumed from sibling triggers
+CRM,Trigger,Trigger,On crm value deleted,Starts when a field is removed from a CRM record,None,board_id filter,INFERRED — filter pattern assumed from sibling triggers
+Flow controller,Action,Action,Router,Splits your flow into different paths based on conditions,Not documented in Confluence,Not documented in Confluence,Not covered by either doc
+Flow controller,Action,Action,Delay,Pauses the flow for a set amount of time,Not documented in Confluence,Not documented in Confluence,Not covered by either doc

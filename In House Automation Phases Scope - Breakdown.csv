@@ -1,0 +1,14 @@
+V1,,
+"Phase 1 = 10 Aug - 21 Aug
+Phase 2 = 24 Aug - 4 Aug",,
+Phase,Task/Item,PIC
+Phase 1,Census existing workflows,Ben (PM)
+Phase 1,Census existing nodes,Ben (PM)
+Phase 1,Breakdown Custom Nodes,Ben (PM)
+Phase 1,Prioritize nodes,Ben (PM)
+Phase 1,Automation Builder UI,Nanang (UI)
+Phase 1,Provision backbone (start from scratch or use existing framework),Ardin (BE)
+Phase 1,"Create backbone (includes behind the scenes workflow, Canvas UI)",Ardin (BE)
+Phase 1,Automation POC,Ardin (BE)
+Phase 1,Working Prototype,Ardin (BE)
+Phase 2,Develop Custom Nodes (Cekat's nodes),Ardin (BE)
