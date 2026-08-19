@@ -613,6 +613,18 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
     box-shadow:0 10px 30px rgba(16,24,40,.25);z-index:200;max-width:520px;text-align:center;}
 
   .placeholder{padding:60px;text-align:center;color:var(--muted2);}
+  /* ---------- Template marketplace prototype ---------- */
+  .mode-switch{display:flex;gap:6px;background:var(--panel3);padding:4px;border-radius:9px;margin-bottom:18px;width:max-content}
+  .mode-switch button{border:0;background:transparent;color:var(--muted);padding:7px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer}
+  .mode-switch button.active{background:#fff;color:var(--accent);box-shadow:0 1px 3px rgba(16,24,40,.12)}
+  .template-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+  .template-card{border:1px solid var(--border);border-radius:12px;background:#fff;padding:17px;cursor:pointer;transition:.15s}
+  .template-card:hover{border-color:var(--accent);box-shadow:0 5px 18px rgba(16,24,40,.08);transform:translateY(-1px)}
+  .template-card h3{font-size:14px;margin:11px 0 6px}.template-card p{font-size:12px;color:var(--muted);line-height:1.5;margin:0 0 13px}
+  .template-meta{display:flex;gap:6px;flex-wrap:wrap}.value-badge{background:#ECFDF3;color:#067647;border:1px solid #ABEFC6;border-radius:20px;padding:4px 8px;font-size:10.5px;font-weight:700}.tag-lite{background:var(--panel3);color:var(--muted);border-radius:5px;padding:4px 7px;font-size:10.5px}
+  .template-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px;align-items:start}.template-main,.template-side{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px}.template-side{position:sticky;top:18px}.template-main h1{font-size:22px;margin:0 0 7px}.template-main h2{font-size:14px;margin:24px 0 9px}.template-main p{font-size:13px;line-height:1.6;color:var(--muted)}.template-side h3{font-size:14px;margin:0 0 14px}.detail-row{display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding:9px 0;font-size:12px}.detail-row span{color:var(--muted)}.step-list{display:flex;flex-direction:column;gap:8px}.step-item{display:flex;gap:9px;align-items:center;font-size:12px;color:var(--muted)}.step-num{width:22px;height:22px;border-radius:50%;background:var(--accent-tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-grid .field.full{grid-column:1/-1}.textarea{min-height:78px;resize:vertical}.section-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted2);font-weight:700;margin:22px 0 10px}.notice{background:var(--accent-tint);border:1px solid #B2CCF5;border-radius:8px;padding:10px 12px;font-size:11.5px;color:var(--accent-dark);line-height:1.5}
+  @media(max-width:900px){.template-layout{grid-template-columns:1fr}.template-side{position:static}.form-grid{grid-template-columns:1fr}}
+  .node-status{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:4px 8px;border-radius:20px}.node-status.published{color:#067647;background:#ECFDF3;border:1px solid #ABEFC6}.node-status.unpublished{color:#B54708;background:#FFFAEB;border:1px solid #FEDF89}  .node-icon{width:34px;height:34px;border-radius:9px;background:var(--accent-tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800}.market-node-list{display:flex;flex-direction:column;gap:8px}.market-node{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;border:1px solid var(--border);border-radius:9px;padding:9px 10px;background:var(--panel2)}.market-node b{display:block;font-size:12px}.market-node span{display:block;color:var(--muted);font-size:11px;margin-top:2px}.market-node p{grid-column:2/-1;margin:0;color:var(--muted);font-size:11px;line-height:1.45}.market-node .tag-lite{display:inline-block;color:var(--muted);margin:0}.market-node-icon{font-size:15px}.flow-preview{background:#FAFBFC;border:1px solid var(--border);border-radius:11px;padding:18px;overflow:auto}.flow-track{display:flex;align-items:center;min-width:920px;padding:20px 8px}.flow-card{width:142px;min-height:92px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px;box-shadow:0 2px 7px rgba(16,24,40,.06);flex:0 0 auto}.flow-card.trigger{border-color:#B692F6}.flow-card.action{border-color:#FEC84B}.flow-card-top{display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:8px}.flow-card-icon{width:24px;height:24px;border-radius:7px;background:var(--accent-tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}.flow-card b{font-size:11.5px}.flow-card span{display:block;color:var(--muted);font-size:10.5px;line-height:1.35}.flow-config{margin-top:7px;padding-top:6px;border-top:1px dashed var(--border);font:9.5px ui-monospace,Menlo,monospace;color:var(--accent-dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.flow-card.trigger .flow-card-icon{background:#F4EBFF;color:#6941C6}.flow-card.action .flow-card-icon{background:#FFFAEB;color:#B54708}.flow-arrow{color:var(--muted2);font-size:18px;padding:0 8px}.icon-picker{border:1px solid var(--border);border-radius:10px;padding:12px;background:var(--panel2)}.icon-picker-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}.icon-picker-top span,.upload-icon-box span{display:block;color:var(--muted);font-size:10.5px;margin-top:3px}.icon-source-tabs{display:flex;gap:5px;border-bottom:1px solid var(--border);padding-bottom:9px;margin-bottom:10px}.icon-source-tabs button{border:1px solid transparent;background:transparent;color:var(--muted);padding:6px 9px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer}.icon-source-tabs button.active{background:#fff;border-color:var(--border);color:var(--accent)}.icon-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.icon-option{height:38px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--muted);font-size:18px;cursor:pointer}.icon-option:hover,.icon-option.selected{border-color:var(--accent);background:var(--accent-tint);color:var(--accent);box-shadow:0 0 0 2px #B2CCF5}.upload-icon-box{display:flex;align-items:center;gap:10px;border:1px dashed #98A2B3;border-radius:8px;padding:10px;background:#fff}.upload-icon-placeholder{width:34px;height:34px;border:1px dashed var(--muted2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px}  .view-toggle{display:flex;gap:3px;border:1px solid var(--border);border-radius:8px;padding:3px;background:var(--panel2)}.view-toggle button{border:0;background:transparent;color:var(--muted);padding:6px 9px;border-radius:5px;font-size:12px;cursor:pointer}.view-toggle button.active{background:#fff;color:var(--accent);box-shadow:0 1px 3px rgba(16,24,40,.12)}.node-list-card{display:flex;align-items:center;gap:13px;border:1px solid var(--border);border-radius:11px;padding:14px;background:#fff;margin-bottom:10px}.node-list-card:hover{border-color:var(--accent)}.node-list-card h3{font-size:13.5px;margin:0 0 4px}.node-list-card p{font-size:11.5px;color:var(--muted);margin:0}.node-list-card .node-actions{margin-left:auto;display:flex;gap:7px;align-items:center}.node-builder{padding:22px 28px;overflow:auto}.node-builder h1{font-size:19px;margin:0 0 5px}.node-builder-sub{font-size:12.5px;color:var(--muted);margin-bottom:18px}.node-builder-grid{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:18px;align-items:start}.node-panel{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px}.node-panel h2{font-size:14px;margin:0 0 14px}.node-panel h3{font-size:12px;margin:19px 0 9px}.request-preview{background:#101828;color:#D0D5DD;border-radius:9px;padding:13px;font:11px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap}.node-field-row{display:grid;grid-template-columns:1.1fr .9fr 100px 88px 30px;gap:7px;align-items:center;margin-bottom:7px}.node-field-row .fake-input{font-size:11px;padding:7px 8px}.checkline{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted);margin:8px 0}.node-builder-actions{display:flex;gap:8px;margin-top:18px}.node-info{background:var(--accent-tint);border:1px solid #B2CCF5;color:var(--accent-dark);font-size:11.5px;line-height:1.5;padding:10px 12px;border-radius:8px;margin-bottom:14px}.version-note{font-size:11px;color:var(--muted);line-height:1.5}.node-preview-card{border:1px dashed #98A2B3;border-radius:10px;padding:14px;background:var(--panel2)}
 </style>
 </head>
 <body>
@@ -1679,6 +1691,132 @@ function TopHeader() {
   }, "▾"))));
 }
 
+/* ---------------- Template marketplace prototype ---------------- */
+const TEMPLATE_DEMO = {
+  name: "Create Investor Update Deck",
+  summary: "Turn monthly business metrics into an investor-ready update.",
+  description: "This workflow pulls key metrics from Stripe, Sheets, HubSpot, and Notion, then generates and distributes a polished investor update deck.",
+  problem: "Founders spend hours every month collecting metrics, formatting slides, and sending updates.",
+  outcome: "A repeatable monthly investor reporting process with less manual work.",
+  timeSaved: "2 hours / month",
+  impact: "$4,500 / year",
+  category: "Finance & reporting",
+  tags: ["Investor updates", "Monthly reporting", "Founder ops"],
+  author: "Cekat Automation Team",
+  connections: ["Stripe", "Google Sheets", "HubSpot", "Notion", "Presenton"],
+  steps: ["Every month", "Check active subscriptions", "Pull churn and revenue data", "Find pipeline updates", "Generate presentation", "Export and distribute"],
+  nodes: [
+    ["Schedule", "Every month", "Trigger", "Runs on the first day of each month.", "1st day · 09:00 WIB"],
+    ["Stripe", "Search subscriptions", "Data", "Pulls active subscriptions and churn metrics.", "status = active"],
+    ["Google Sheets", "Get monthly update", "Data", "Reads the latest reporting inputs.", "Monthly_Update"],
+    ["HubSpot", "Find deals", "Lookup", "Retrieves current pipeline information.", "pipeline = current"],
+    ["Notion", "Retrieve database", "Data", "Loads product milestones and notes.", "Investor updates"],
+    ["Presenton", "Generate presentation", "Action", "Creates the investor-ready presentation.", "async = true"],
+    ["Email", "Distribute report", "Action", "Sends the finished report to investors.", "investors@company.com"]
+  ],
+  fields: [
+    ["Reporting month", "Client-configurable", "Required"],
+    ["Stripe connection", "Required connection", "Required"],
+    ["Investor email list", "Client-configurable", "Required"],
+    ["Internal API key", "Hidden implementation detail", "Hidden"]
+  ]
+};
+function TemplateList({onOpen, onCreate, client}) {
+  return React.createElement("div", {className:"listwrap"},
+    React.createElement("div", {className:"mode-switch"},
+      React.createElement("button", {className:!client?"active":"", onClick:()=>onOpen("backoffice")}, "Backoffice"),
+      React.createElement("button", {className:client?"active":"", onClick:()=>onOpen("client")}, "Client dashboard")
+    ),
+    React.createElement("div", {className:"listhead"}, React.createElement("div", null,
+      React.createElement("h1", null, client?"Automation templates":"Workflow templates"),
+      React.createElement("p", null, client?"Start faster with Cekat-built automation templates.":"Create and publish reusable workflows for client workspaces.")
+    ), !client && React.createElement("button", {className:"btn primary", onClick:onCreate}, "+ Create template")), React.createElement("div", {className:"notice", style:{marginBottom:14}}, client?"Client Template Marketplace — browse published templates, duplicate them into your workspace, and modify them freely.":"Backoffice Template Builder — create and publish templates for clients."),
+    React.createElement("div", {className:"toolbar"}, React.createElement("input", {placeholder:"Search templates…"}), React.createElement("span", {className:"chip on"}, "All templates"), React.createElement("span", {className:"chip"}, "Category")),
+    React.createElement("div", {className:"template-grid"}, React.createElement("div", {className:"template-card", onClick:()=>onOpen("detail")},
+      React.createElement("div", {className:"template-meta"}, React.createElement("span", {className:"status-pill Published"}, "Published"), React.createElement("span", {className:"tag-lite"}, TEMPLATE_DEMO.category)),
+      React.createElement("h3", null, TEMPLATE_DEMO.name), React.createElement("p", null, TEMPLATE_DEMO.summary),
+      React.createElement("div", {className:"template-meta"}, React.createElement("span", {className:"value-badge"}, "Save ", TEMPLATE_DEMO.timeSaved), React.createElement("span", {className:"value-badge"}, TEMPLATE_DEMO.impact)),
+      React.createElement("div", {style:{marginTop:14,fontSize:11,color:"var(--muted2)"}}, TEMPLATE_DEMO.connections.length, " integrations · Updated today")
+    ))
+  );
+}
+function TemplateDetails({onBack, onUse, onEdit, client}) {
+  const primaryAction=client?React.createElement("button", {className:"btn primary", onClick:onUse}, "Duplicate and use"):React.createElement("button", {className:"btn primary", onClick:onEdit}, "Edit template");
+  return React.createElement("div", {className:"listwrap"}, React.createElement("div", {className:"edithead", style:{margin:"-22px -28px 18px"}}, React.createElement("span", {className:"backbtn", onClick:onBack}, "← Back"), React.createElement("h2", null, TEMPLATE_DEMO.name), React.createElement("span", {className:"status-pill Published"}, "Published"), React.createElement("span", {className:"spacer"}), primaryAction),
+    React.createElement("div", {className:"template-layout"}, React.createElement("div", {className:"template-main"},
+      React.createElement("div", {className:"template-meta"}, React.createElement("span", {className:"value-badge"}, "Save ", TEMPLATE_DEMO.timeSaved), React.createElement("span", {className:"value-badge"}, TEMPLATE_DEMO.impact)),
+      React.createElement("h1", null, TEMPLATE_DEMO.name), React.createElement("p", null, TEMPLATE_DEMO.summary), React.createElement("h2", null, "About this template"), React.createElement("p", null, TEMPLATE_DEMO.description), React.createElement("h2", null, "Why use it?"), React.createElement("p", null, TEMPLATE_DEMO.problem), React.createElement("p", null, TEMPLATE_DEMO.outcome), React.createElement("h2", null, "What's included?"), React.createElement("div", {className:"template-meta"}, TEMPLATE_DEMO.connections.map(x=>React.createElement("span", {className:"tag-lite", key:x}, x))), React.createElement("h2", null, "Workflow steps"), React.createElement("div", {className:"step-list"}, TEMPLATE_DEMO.steps.map((x,i)=>React.createElement("div", {className:"step-item", key:x}, React.createElement("span", {className:"step-num"}, i+1), x))), React.createElement("h2", null, "Workflow preview"), React.createElement("p", null, "See the flow before duplicating it. The copied workflow can be modified independently in your workspace."), React.createElement("div", {className:"flow-preview"}, React.createElement("div", {className:"flow-track"}, TEMPLATE_DEMO.nodes.map((n,i)=>React.createElement(React.Fragment, {key:n[0]}, i>0 && React.createElement("span", {className:"flow-arrow"}, "→"), React.createElement("div", {className:"flow-card "+(n[2]==="Trigger"?"trigger":n[2]==="Action"?"action":"")}, React.createElement("div", {className:"flow-card-top"}, React.createElement("div", {className:"flow-card-icon"}, i===0?"◷":i===1?"$":i===2?"▦":i===3?"◉":i===4?"◆":i===5?"✦":"✉"), React.createElement("b", null, n[0])), React.createElement("span", null, n[1]), React.createElement("span", null, n[2]), React.createElement("div", {className:"flow-config"}, n[4])))))), React.createElement("h2", null, "Nodes included"), React.createElement("div", {className:"market-node-list"}, TEMPLATE_DEMO.nodes.map((n,i)=>React.createElement("div", {className:"market-node", key:n[0]}, React.createElement("div", {className:"node-icon market-node-icon"}, i===0?"◷":i===1?"$":i===2?"▦":i===3?"◉":i===4?"◆":i===5?"✦":"✉"), React.createElement("div", null, React.createElement("b", null, n[0]), React.createElement("span", null, n[1])), React.createElement("span", {className:"tag-lite"}, n[2]), React.createElement("p", null, n[3])))), React.createElement("h2", null, "Setup guide"), React.createElement("p", null, "Connect the required services, review the configurable fields, then activate the copied workflow. Cekat will keep the original template unchanged.")),
+      React.createElement("aside", {className:"template-side"}, React.createElement("h3", null, "Before you start"), TEMPLATE_DEMO.connections.map(x=>React.createElement("div", {className:"detail-row", key:x}, React.createElement("span", null, x), React.createElement("b", null, "Connection"))), React.createElement("div", {className:"detail-row"}, React.createElement("span", null, "Created by"), React.createElement("b", null, TEMPLATE_DEMO.author)), React.createElement("div", {className:"detail-row"}, React.createElement("span", null, "Last updated"), React.createElement("b", null, "Today")), client?React.createElement("button", {className:"btn primary", style:{width:"100%",marginTop:18}, onClick:onUse}, "Duplicate and use"):React.createElement("button", {className:"btn", style:{width:"100%",marginTop:18}, onClick:onEdit}, "Edit template")))
+  );
+}
+function TemplateBuilder({onBack, pushToast}) {
+  const [tab,setTab]=useState("details");
+  const [published,setPublished]=useState(false);
+  const fieldRows=TEMPLATE_DEMO.fields;
+  const tabs=["details","workflow","fields"];
+  const tabBar=React.createElement("div",{className:"overview-tabs"},tabs.map(x=>React.createElement("span",{className:"overview-tab "+(tab===x?"active":""),onClick:()=>setTab(x),key:x},x==="details"?"Template details":x==="workflow"?"Workflow builder":"Client fields")));
+  const header=React.createElement("div",{className:"edithead"},React.createElement("span",{className:"backbtn",onClick:onBack},"← Templates"),React.createElement("h2",null,"Create template"),React.createElement("span",{className:"status-pill "+(published?"Published":"Draft")},published?"Published":"Draft"),React.createElement("span",{className:"spacer"}),React.createElement("button",{className:"btn",onClick:()=>pushToast("Preview opened in client dashboard")},"Preview"),React.createElement("button",{className:"btn primary",onClick:()=>{setPublished(true);pushToast("Template published")}},published?"Published":"Publish"));
+  const details=React.createElement("div",{className:"listwrap"},React.createElement("div",{className:"notice"},"Admin-only builder. This content appears on the client template detail page."),React.createElement("div",{className:"form-grid",style:{marginTop:18}},["Template name","Short summary","Category","Author","Time saved","Cost or revenue impact"].map((label,i)=>React.createElement("div",{className:"field",key:label},React.createElement("label",null,label),React.createElement("input",{className:"fake-input",defaultValue:[TEMPLATE_DEMO.name,TEMPLATE_DEMO.summary,TEMPLATE_DEMO.category,TEMPLATE_DEMO.author,TEMPLATE_DEMO.timeSaved,TEMPLATE_DEMO.impact][i]})))),React.createElement("div",{className:"field full"},React.createElement("label",null,"Full description"),React.createElement("textarea",{className:"fake-input textarea",defaultValue:TEMPLATE_DEMO.description})),React.createElement("div",{className:"field full"},React.createElement("label",null,"Setup guide"),React.createElement("textarea",{className:"fake-input textarea",defaultValue:"Connect the required services, review the configurable fields, then activate the copied workflow."})));
+  const fields=React.createElement("div",{className:"listwrap"},React.createElement("div",{className:"notice"},"Mark each workflow input so clients know what they must configure."),React.createElement("div",{className:"template-main",style:{marginTop:16}},fieldRows.map(r=>React.createElement("div",{className:"detail-row",key:r[0]},React.createElement("b",null,r[0]),React.createElement("span",null,r[1]),React.createElement("span",{className:"tag-lite"},r[2])))));
+  const content=tab==="details"?details:tab==="workflow"?React.createElement(Editor,{wf:{...WORKFLOWS[0],name:TEMPLATE_DEMO.name},onBack:onBack,pushToast:pushToast}):fields;
+  return React.createElement("div",{className:"main"},header,tabBar,content);
+}
+
+/* ---------------- Custom node builder prototype ---------------- */
+const CUSTOM_NODE_DEMO = {
+  name: "Send WhatsApp Template Message",
+  key: "send_whatsapp_template",
+  icon: "↗",
+  description: "Send an approved WhatsApp template message using the client's connected Meta account.",
+  category: "Actions",
+  method: "POST",
+  url: "https://graph.facebook.com/v21.0/{{phone_number_id}}/messages",
+  auth: "Workspace credential",
+  version: "v1",
+  fields: [
+    ["phone_number_id", "Text", "Path", "Required"],
+    ["recipient_phone", "Text", "Body", "Required"],
+    ["template_name", "Text", "Body", "Required"],
+    ["language_code", "Select", "Body", "Optional"]
+  ]
+};
+function CustomNodeList({onCreate, onEdit, nodePublished, setNodePublished}) {
+  const [view,setView]=useState("cards");
+  const status=nodePublished?"Published":"Unpublished";
+  const actions=React.createElement("div",{className:"node-actions"},React.createElement("span",{className:"node-status "+(nodePublished?"published":"unpublished")},nodePublished?"Published to clients":"Unpublished"),React.createElement("button",{className:"btn small",onClick:onEdit},"Edit"),React.createElement("button",{className:"btn small",onClick:()=>setNodePublished(!nodePublished)},nodePublished?"Unpublish":"Publish"));
+  const card=React.createElement("div", {className:"node-list-card"}, React.createElement("div", {className:"node-icon"}, CUSTOM_NODE_DEMO.icon), React.createElement("div", null, React.createElement("h3", null, CUSTOM_NODE_DEMO.name), React.createElement("p", null, CUSTOM_NODE_DEMO.description), React.createElement("div", {className:"template-meta", style:{marginTop:7}}, React.createElement("span", {className:"tag-lite"}, CUSTOM_NODE_DEMO.category), React.createElement("span", {className:"tag-lite"}, CUSTOM_NODE_DEMO.method), React.createElement("span", {className:"tag-lite"}, CUSTOM_NODE_DEMO.version)), actions));
+  const table=React.createElement("table",{className:"wftable"},React.createElement("thead",null,React.createElement("tr",null,["Node","Type","Request","Version","Status","Actions"].map(x=>React.createElement("th",{key:x},x)))),React.createElement("tbody",null,React.createElement("tr",null,React.createElement("td",null,CUSTOM_NODE_DEMO.name),React.createElement("td",null,CUSTOM_NODE_DEMO.category),React.createElement("td",null,CUSTOM_NODE_DEMO.method),React.createElement("td",null,CUSTOM_NODE_DEMO.version),React.createElement("td",null,React.createElement("span",{className:"node-status "+(nodePublished?"published":"unpublished")},status)),React.createElement("td",null,React.createElement("div",{style:{display:"flex",gap:6}},React.createElement("button",{className:"btn small",onClick:onEdit},"Edit"),React.createElement("button",{className:"btn small",onClick:()=>setNodePublished(!nodePublished)},nodePublished?"Unpublish":"Publish"))))));
+  return React.createElement("div", {className:"listwrap"},
+    React.createElement("div", {className:"listhead"}, React.createElement("div", null,
+      React.createElement("h1", null, "Custom nodes"), React.createElement("p", null, "Create API-based nodes without code deployment. Admin-only configuration.")
+    ), React.createElement("div",{style:{display:"flex",gap:8,alignItems:"center"}},React.createElement("div",{className:"view-toggle"},React.createElement("button",{className:view==="cards"?"active":"",onClick:()=>setView("cards")},"▦ Cards"),React.createElement("button",{className:view==="table"?"active":"",onClick:()=>setView("table")},"☷ Table")),React.createElement("button", {className:"btn primary", onClick:onCreate}, "+ Create custom node"))),
+    React.createElement("div", {className:"toolbar"}, React.createElement("input", {placeholder:"Search custom nodes…"}), React.createElement("span", {className:"chip on"}, "All nodes"), React.createElement("span", {className:"chip"}, "Published"), React.createElement("span", {className:"chip"}, "Drafts")),
+    view==="cards"?card:table
+  );
+}
+function IconPicker({pushToast}) {
+  const [source,setSource]=useState("integration");
+  const [selected,setSelected]=useState("↗");
+  const icons=["↗","✦","⚡","◎","◈","▣","●","◆","◇","✚","⌁","◉"];
+  const sourceLabel=source==="integration"?"Integration icon":source==="template"?"Template icon":"Uploaded icon";
+  return React.createElement("div",{className:"icon-picker"},React.createElement("div",{className:"icon-picker-top"},React.createElement("div",{className:"node-icon"},selected),React.createElement("div",null,React.createElement("b",null,sourceLabel),React.createElement("span",null,"Shown in the client node palette"))),React.createElement("div",{className:"icon-source-tabs"},[["integration","Integration"],["template","Template"],["upload","Upload"]].map(x=>React.createElement("button",{key:x[0],className:source===x[0]?"active":"",onClick:()=>{setSource(x[0]);if(x[0]==="upload")pushToast("Upload icon dialog opened")}},x[1]))),source==="upload"?React.createElement("div",{className:"upload-icon-box"},React.createElement("div",{className:"upload-icon-placeholder"},"↑"),React.createElement("div",null,React.createElement("b",null,"Upload a square icon"),React.createElement("span",null,"PNG, SVG, or WebP · 512×512 recommended")),React.createElement("button",{className:"btn small",onClick:()=>pushToast("Icon upload simulated")},"Choose file")):React.createElement("div",{className:"icon-grid"},icons.map(icon=>React.createElement("button",{key:icon,className:"icon-option "+(selected===icon?"selected":""),onClick:()=>setSelected(icon)},icon))));
+}
+function CustomNodeBuilder({onBack, pushToast}) {
+  const [tab,setTab]=useState("definition");
+  const [published,setPublished]=useState(false);
+  const [fields,setFields]=useState(CUSTOM_NODE_DEMO.fields);
+  const addField=()=>setFields(fs=>[...fs,["new_parameter","Text","Body","Optional"]]);
+  const updateField=(i,j,v)=>setFields(fs=>fs.map((r,ri)=>ri===i?r.map((x,xi)=>xi===j?v:x):r));
+  const request=`POST ${CUSTOM_NODE_DEMO.url}\nAuthorization: workspace credential\nContent-Type: application/json\n\n{\n  "to": "{{recipient_phone}}",\n  "type": "template",\n  "template": "{{template_name}}"\n}`;
+  const header=React.createElement("div", {className:"edithead"}, React.createElement("span", {className:"backbtn", onClick:onBack}, "← Custom nodes"), React.createElement("h2", null, "Create custom node"), React.createElement("span", {className:"node-status "+(published?"published":"unpublished")}, published?"Published":"Draft"), React.createElement("span", {className:"spacer"}), React.createElement("button", {className:"btn", onClick:()=>pushToast("Test request sent — 200 OK")}, "Test request"), React.createElement("button", {className:"btn primary", onClick:()=>{setPublished(!published);pushToast(published?"Node unpublished from client builder":"Node published to client builder")}}, published?"Unpublish":"Publish"));
+  const tabs=React.createElement("div", {className:"overview-tabs"}, ["definition","request","inputs","output"].map(x=>React.createElement("span", {key:x,className:"overview-tab "+(tab===x?"active":""),onClick:()=>setTab(x)}, x[0].toUpperCase()+x.slice(1))));
+  const definition=React.createElement("div", {className:"node-builder"}, React.createElement("div", {className:"node-info"}, "Admin-only configuration. Publish this node to make it visible in the client workflow builder. Clients use their own parameters and workspace credentials."), React.createElement("div", {className:"node-builder-grid"}, React.createElement("div", {className:"node-panel"}, React.createElement("h2", null, "Node identity"), React.createElement("div", {className:"form-grid"}, [["Node name",CUSTOM_NODE_DEMO.name],["Internal key",CUSTOM_NODE_DEMO.key],["Category",CUSTOM_NODE_DEMO.category],["Node type","Action"]].map(r=>React.createElement("div", {className:"field",key:r[0]},React.createElement("label",null,r[0]),React.createElement("input",{className:"fake-input",defaultValue:r[1]}))), React.createElement("div", {className:"field full"}, React.createElement("label", null, "Node icon"), React.createElement(IconPicker, {pushToast:pushToast})), React.createElement("div",{className:"field full"},React.createElement("label",null,"Description"),React.createElement("textarea",{className:"fake-input textarea",defaultValue:CUSTOM_NODE_DEMO.description}))), React.createElement("h3", null, "Client visibility"), React.createElement("label", {className:"checkline"}, React.createElement("input", {type:"checkbox",defaultChecked:true}), " Show this node in the client workflow builder when published"), React.createElement("label", {className:"checkline"}, React.createElement("input", {type:"checkbox",defaultChecked:true}), " Require clients to provide their own credential")), React.createElement("aside", {className:"node-panel"}, React.createElement("h2", null, "Node status"), React.createElement("div", {className:"detail-row"},React.createElement("span",null,"Current status"),React.createElement("b",null,published?"Published":"Draft")),React.createElement("div", {className:"detail-row"},React.createElement("span",null,"Client visibility"),React.createElement("b",null,published?"Visible":"Hidden")),React.createElement("div", {className:"detail-row"},React.createElement("span",null,"Version"),React.createElement("b",null,"v1")),React.createElement("p",{className:"version-note"},"Unpublishing hides the node from new workflows. Existing workflows remain pinned to their node version."))));
+  const requestTab=React.createElement("div", {className:"node-builder"}, React.createElement("div", {className:"node-builder-grid"},React.createElement("div",{className:"node-panel"},React.createElement("h2",null,"HTTP request"),React.createElement("div",{className:"form-grid"},React.createElement("div",{className:"field"},React.createElement("label",null,"Request method"),React.createElement("select",{className:"fake-input",defaultValue:CUSTOM_NODE_DEMO.method},React.createElement("option",null,"GET"),React.createElement("option",null,"POST"),React.createElement("option",null,"PUT"),React.createElement("option",null,"PATCH"),React.createElement("option",null,"DELETE"))),React.createElement("div",{className:"field"},React.createElement("label",null,"Authentication"),React.createElement("select",{className:"fake-input",defaultValue:CUSTOM_NODE_DEMO.auth},React.createElement("option",null,"Workspace credential"),React.createElement("option",null,"None"))),React.createElement("div",{className:"field full"},React.createElement("label",null,"Request URL"),React.createElement("input",{className:"fake-input",defaultValue:CUSTOM_NODE_DEMO.url}))),React.createElement("h3",null,"Request preview"),React.createElement("pre",{className:"request-preview"},request)),React.createElement("aside",{className:"node-panel"},React.createElement("h2",null,"Safety controls"),["Allowlisted domain","Timeout: 30 seconds","Retry: 2 attempts","Secrets masked in logs"].map(x=>React.createElement("div",{className:"detail-row",key:x},React.createElement("span",null,x),React.createElement("b",null,"Enabled"))))));
+  const inputs=React.createElement("div", {className:"node-builder"}, React.createElement("div",{className:"node-panel"},React.createElement("h2",null,"Client-configurable inputs"),React.createElement("p",{className:"node-builder-sub"},"These fields appear to clients when they add the published node."),fields.map((r,i)=>React.createElement("div",{className:"node-field-row",key:i},React.createElement("input",{className:"fake-input",value:r[0],onChange:e=>updateField(i,0,e.target.value)}),React.createElement("select",{className:"fake-input",value:r[1],onChange:e=>updateField(i,1,e.target.value)},React.createElement("option",null,"Text"),React.createElement("option",null,"Number"),React.createElement("option",null,"Boolean"),React.createElement("option",null,"Select")),React.createElement("select",{className:"fake-input",value:r[2],onChange:e=>updateField(i,2,e.target.value)},React.createElement("option",null,"URL"),React.createElement("option",null,"Query"),React.createElement("option",null,"Header"),React.createElement("option",null,"Body")),React.createElement("select",{className:"fake-input",value:r[3],onChange:e=>updateField(i,3,e.target.value)},React.createElement("option",null,"Required"),React.createElement("option",null,"Optional")),React.createElement("button",{className:"btn small",onClick:()=>setFields(fs=>fs.filter((_,ri)=>ri!==i))},"×"))),React.createElement("button",{className:"btn small",onClick:addField},"+ Add input")));
+  const output=React.createElement("div", {className:"node-builder"},React.createElement("div",{className:"node-builder-grid"},React.createElement("div",{className:"node-panel"},React.createElement("h2",null,"Response mapping"),React.createElement("p",{className:"node-builder-sub"},"Define the output fields available to downstream workflow nodes."),["message_id · Text","status · Text","provider_response · JSON"].map(x=>React.createElement("div",{className:"detail-row",key:x},React.createElement("span",null,x),React.createElement("b",null,"Output")))),React.createElement("aside",{className:"node-panel"},React.createElement("h2",null,"Publish checklist"),["Request is valid","Inputs have types","Credential is workspace-scoped","Output schema defined"].map(x=>React.createElement("label",{className:"checkline",key:x},React.createElement("input",{type:"checkbox",defaultChecked:true}),x)))));
+  return React.createElement("div",{className:"main"},header,tabs,tab==="definition"?definition:tab==="request"?requestTab:tab==="inputs"?inputs:output);
+}
+
 /* ---------------- Sidebar (Automation module submenu) ---------------- */
 function Sidebar({
   nav,
@@ -1688,6 +1826,14 @@ function Sidebar({
     id: "workflows",
     ic: "🔗",
     label: "Workflows"
+  }, {
+    id: "templates",
+    ic: "▣",
+    label: "Templates"
+  }, {
+    id: "customnodes",
+    ic: "✦",
+    label: "Custom nodes"
   }, {
     id: "executions",
     ic: "◷",
@@ -2825,6 +2971,7 @@ function ExecutionsPanel({
 function App() {
   const [nav, setNav] = useState("workflows");
   const [openId, setOpenId] = useState(null);
+  const [templateView, setTemplateView] = useState("backoffice");
   const [toast, setToast] = useState(null);
   const [workflows, setWorkflows] = useState(WORKFLOWS);
   const pushToast = msg => {
@@ -2856,7 +3003,11 @@ function App() {
     pushToast('Created "Untitled automation" — drag a trigger onto the canvas to get started.');
   };
   let body;
-  if (nav === "workflows") {
+  if (nav === "templates") {
+    if (openId === "builder") body = /*#__PURE__*/React.createElement(TemplateBuilder, {onBack:()=>setOpenId(null), pushToast:pushToast});else if (openId === "detail") body = /*#__PURE__*/React.createElement(TemplateDetails, {client:templateView === "client", onBack:()=>setOpenId(null), onEdit:()=>setOpenId("builder"), onUse:()=>{setTemplateView("client");setOpenId(null);pushToast("Template duplicated to your workspace — you can now modify it");}});else body = /*#__PURE__*/React.createElement(TemplateList, {client:templateView === "client", onOpen:v=>{if(v === "backoffice") {setTemplateView("backoffice");setOpenId(null);} else if(v === "client") {setTemplateView("client");setOpenId(null);} else setOpenId(v);}, onCreate:()=>setOpenId("builder")});
+  } else if (nav === "customnodes") {
+    if (openId === "node-builder") body = /*#__PURE__*/React.createElement(CustomNodeBuilder, {onBack:()=>setOpenId(null), pushToast:pushToast});else body = /*#__PURE__*/React.createElement(CustomNodeList, {onCreate:()=>setOpenId("node-builder"), onEdit:()=>setOpenId("node-builder"), nodePublished:true, setNodePublished:v=>pushToast(v?"Node published to client builder":"Node unpublished from client builder")});
+  } else if (nav === "workflows") {
     body = openId ? /*#__PURE__*/React.createElement(Editor, {
       wf: workflows.find(w => w.id === openId),
       onBack: () => setOpenId(null),
@@ -2882,7 +3033,7 @@ function App() {
   }, /*#__PURE__*/React.createElement("span", null, "🔧 Prototype — illustrative UI for the Cekat Automations PRD. Not connected to real data or an execution engine."), /*#__PURE__*/React.createElement("span", null, "Demo workflow: ", /*#__PURE__*/React.createElement("b", null, "\"Label New\""), " — the 136→12 node example from Appendix B")), /*#__PURE__*/React.createElement(TopHeader, null), /*#__PURE__*/React.createElement("div", {
     className: "app"
   }, /*#__PURE__*/React.createElement(Sidebar, {
-    nav: openId ? "workflows" : nav,
+    nav: openId ? nav : nav,
     setNav: n => {
       setOpenId(null);
       setNav(n);
